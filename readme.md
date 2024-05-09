@@ -2,7 +2,7 @@
 > **Brianna Bistolfi Pan**
 >
 >
-> ## Descripción
+> ## Descripción: 
 >
 > *Proyecto 2024: Aplicación Quiz. Preguntas multiple choice sobre deportes.* 
 >
