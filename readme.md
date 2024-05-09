@@ -2,19 +2,16 @@
 > **Brianna Bistolfi Pan**
 >
 >
-> ## Descripción: 
+> ## Descripción
 >
 > *Proyecto 2024: Aplicación Quiz. Preguntas multiple choice sobre deportes.* 
 >
->  :snowboarder: 
->  :mountain_biking_woman:
->  :football:
+>  :snowboarder: :mountain_biking_woman: :football:
 >
 > | Email              | Autores |
-> |--------------------|---------|
+> |--------------------|---------| 
 > | 2309051@ucc.edu.ar | Brianna |
 >
-> 
 >  ### Tecnologías Usadas: 
 >   - HTML5
 >   - CSS3
