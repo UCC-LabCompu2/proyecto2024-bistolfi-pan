@@ -14,4 +14,4 @@
 -HTML5
 -CSS3
 
-Link del Proyecto: [Git Hub aula de lab compu 2] (https://github.com/UCC-LabCompu2/proyecto2024-bistolfi-pan) 
+Link del Proyecto: [Git Hub aula de lab compu 2] (https://ucc-labcompu2.github.io/proyecto2024-bistolfi-pan/) 
