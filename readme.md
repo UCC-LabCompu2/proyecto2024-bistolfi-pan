@@ -4,7 +4,7 @@
 >
 > ## Descripción
 >
-> *Proyecto 2024: Aplicación Quiz. Preguntas multiple choice sobre deportes.* 
+> ***Proyecto 2024***: *Aplicación Quiz. Preguntas multiple choice sobre deportes.* 
 >
 >   🏂 🏈 🚵‍♂️
 >
