@@ -1,43 +1,50 @@
 <!DOCTYPE html>
-<html lang="es" >
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <title>SportQuiz</title>
+    <meta content="Brianna bistolfi Pan" name="Author">
+    <meta content="Proyecto 2024" name="descrpción">
+    <meta content="eleccion de deporte a desafiar conocimientos, cuestinario" name="keywords">
     <link rel="stylesheet" href="quiz.css" type="text/css">
 </head>
 <style>
 
-    h3{
+    h3 {
         text-align: left;
         font-size: 40px;
         color: #E7E49D;
-        font-family:  "Merriweather", serif;
+        font-family: "Merriweather", serif;
     }
 
     .sport-container {
-        text-align:center;
+        text-align: center;
         margin-bottom: 10px;
     }
+
     .sport-container img {
         width: 120px;
         height: 100px;
         display: block;
         margin: 0 auto;
     }
+
     .sport-container button {
         font-size: 18px;
-        padding:  6px 10px;
+        padding: 6px 10px;
         border-radius: 30px;
         background-color: #D9D9D9;
         border: none;
         width: 220px;
     }
+
     #container1, #container2, #container3 {
         display: flex;
         justify-content: space-between;
         align-items: center;
         padding: 10px;
     }
+
     #container2 {
         flex-direction: column;
     }
@@ -52,37 +59,40 @@
 </style>
 <body class="sq">
 <nav>
-    <a href="index.html" target="_self" > <img src="imagenes/flecha"  id="flecha" ></a>
-    <a href="index.html" target="_self" ><img src="imagenes/casa.png" id="casa"></a>
+    <a href="index.html" target="_self"> <img src="imagenes/flecha" id="flecha" alt="flecha"></a>
+    <a href="index.html" target="_self"><img src="imagenes/casa.png" id="casa" alt="casa"></a>
 </nav>
 <header>
     <h1>Choose your sport! </h1>
 </header>
 
-<div id="container1">
-    <div class="sport-container">
-        <button id="bottom" type="button"><a href="snowboard.html" target="_self">SNOWBOARD </a> </button>
-        <img src="imagenes/snow.png"  alt="snowboard">
+<main>
+    <div id="container1">
+        <div class="sport-container">
+            <button id="bottom" type="button"><a href="snowboard.html" target="_self">SNOWBOARD </a></button>
+            <img src="imagenes/snow.png" alt="snowboard">
+        </div>
     </div>
-</div>
 
-<div id="container2">
-    <div class="sport-container">
-        <button id="bottom2" type="button"><a href="soccer.html" target="_self">SOCCER</a></button>
-        <img src="imagenes/socer.png"  alt="soccer">
+    <div id="container2">
+        <div class="sport-container">
+            <button id="bottom2" type="button"><a href="soccer.html" target="_self">SOCCER</a></button>
+            <img src="imagenes/socer.png" alt="soccer">
+        </div>
     </div>
-</div>
-
-<div id="container3">
-    <div class="sport-container">
-        <button id="bottom3" type="button"><a href="running.html" target="_self">RUNNING </a> </button>
-        <img src="imagenes/running.png"  alt="running" id="running">
+    <article>
+        <h5>YOU GOT THIS! CHALLENGE YOURSELF !</h5>
+    </article>
+    <div id="container3">
+        <div class="sport-container">
+            <button id="bottom3" type="button"><a href="running.html" target="_self">RUNNING </a></button>
+            <img src="imagenes/running.png" alt="running" id="running">
+        </div>
     </div>
-</div>
-
-
-
-
+</main>
+<footer>
+    <h6>Explora más desafíos deportivos y mantente activo. Todos los derechos reservados ©2024 </h6>
+</footer>
 </body>
 </html>
 
