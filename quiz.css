@@ -168,3 +168,11 @@ ul {
     margin-left: 1px;
 
 }
+
+a:link {
+    color: sienna;
+}
+
+a:hover {
+    font-weight: bold;
+}
