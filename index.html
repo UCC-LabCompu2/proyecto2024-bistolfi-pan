@@ -12,6 +12,7 @@
           rel="stylesheet">
     <link rel="stylesheet" href="quiz.css" type="text/css">
     <link rel="shortcut icon" href="imagenes/sportcolor.png">
+    <script type="text/javascript" src="misfunciones.js"></script>
 
 </head>
 
@@ -20,7 +21,7 @@
 <!--cabecera -->
 <header>
     <nav>
-        <em><strong>REDES SOCIALES:</strong> @sportquizz </em>
+        <em><strong>SocialMedia: </strong> @sportquizz </em>
         <img src="imagenes/casa.png" id="casa" alt="casa">
     </nav>
     <img src="imagenes/iconoprincipal.png" id="logo" alt="logo">
@@ -31,10 +32,32 @@
 
 <!-- contenido principal -->
 <main>
+    <h3>CHALLENGE YOUR KNOWLEDGE</h3>
 
     <aside>
-        <h3>CHALLENGE YOUR KNOWLEDGE</h3>
+        <h4> PLEASE ENTER YOUR PERSONAL DATA BEFORE YOU BEGIN</h4>
+
+        <div id="data">
+            <p>
+                <label for="email">Email: </label>
+                <input type="email" name="emal" id="email" size="40" placeholder="insert your email" maxlength="40">
+            </p>
+            <p>
+                <label for="User">User:</label>
+                <input type="text" name="User" id="User" size="40" placeholder="insert your name" maxlength="40">
+            </p>
+            <p>
+                <label for="psw"> Password:</label>
+                <input type="password" name="psw" id="psw" size="40" placeholder="insert your password" maxlength="40">
+            </p>
+            <p>
+                <label for="Age"> Age: </label>
+                <input type="number" name="Age" id="Age" placeholder="insert your age" maxlength="3" minlength="0">
+            </p>
+        </div>
     </aside>
+
+    <h4> SELECT AN OPTION TO START!</h4>
 
     <div id="container">
         <p>

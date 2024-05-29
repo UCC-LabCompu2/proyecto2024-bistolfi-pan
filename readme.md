@@ -1,25 +1,28 @@
-# Proyecto 2024: Brianna Bistolfi Pan  
+# Proyecto 2024: Brianna Bistolfi Pan
+
 Proyecto para laboratorio de computación 2.
 
-- [Autor:](#Autor-)
-- [Descripción:](#Contenido/descripcion)
-- [Tecnologías Usadas:](#Tecnologías-usadas)
+- [Autor:](## Autor)
+- [Descripción:](## Contenido/Descripción)
+- [Tecnologías Usadas:](### Tecnologías Usadas)
+
 ## Autor:
+
 * **Brianna Bistolfi Pan**
 
+## Contenido/Descripción:
 
- ## Descripción:
+***Proyecto 2024***: *Aplicación Quiz. Preguntas multiple choice sobre deportes.*
 
- ***Proyecto 2024***: *Aplicación Quiz. Preguntas multiple choice sobre deportes.* 
+🏂 🏈 🚵‍♂️
 
-   🏂 🏈 🚵‍♂️
-
- | Email              | Autores |
+| Email              | Autores |
  |--------------------|---------| 
- | 2309051@ucc.edu.ar | Brianna |
+| 2309051@ucc.edu.ar | Brianna |
 
-  ### Tecnologías Usadas: 
-   - HTML5
-   - CSS3
+### Tecnologías Usadas:
+
+- HTML5
+- CSS3
 
 Link del Proyecto: [Proyecto 2024 questionario] (https://ucc-labcompu2.github.io/proyecto2024-bistolfi-pan/)
