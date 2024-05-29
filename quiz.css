@@ -52,11 +52,23 @@ h3 {
     padding-bottom: 30px;
 
 }
+#bot {
+    text-align: center;
+    font-size: 20px;
+    font-family: "Merriweather", serif;
+    border-radius: 8px;
+    width: 110px;
 
-#container {
+}
+
+#container , #container0 {
     display: inline-block;
     justify-content: space-between;
     align-items: center;
+}
+.info {
+    justify-content: space-between;
+    padding-inline: 30px;
 }
 
 #bottom, #bottom2, #bottom3, #ready {
