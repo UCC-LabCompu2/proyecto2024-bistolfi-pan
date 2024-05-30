@@ -25,4 +25,4 @@ Proyecto para laboratorio de computación 2.
 - HTML5
 - CSS3
 
-Link del Proyecto: [Proyecto 2024 questionario] (https://ucc-labcompu2.github.io/proyecto2024-bistolfi-pan/)
+Link del Proyecto:[Proyecto 2024 questionario] (https://ucc-labcompu2.github.io/proyecto2024-bistolfi-pan/)
