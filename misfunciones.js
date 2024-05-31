@@ -73,6 +73,35 @@ window.onload = function () {
     document.getElementById("container").style.display = "none";
     document.getElementById("container0").style.display = "none";
     document.getElementById("startMessage").style.display = "none";
+
+    // Deshabilitar el botón "CONFIRM" inicialmente
+    document.getElementById("bot").disabled = true;
+
+
+    // Obtener referencias a los campos de entrada
+    const emailInput = document.getElementById("email");
+    const userInput = document.getElementById("User");
+    const passwordInput = document.getElementById("psw");
+
+  // Agregar event listener para el evento 'keypress' en los campos de entrada
+    emailInput.addEventListener("keypress", function(event) {
+        if (event.key === "Enter") {
+            confirmButton();
+        }
+    });
+
+    userInput.addEventListener("keypress", function(event) {
+        if (event.key === "Enter") {
+            confirmButton();
+        }
+    });
+
+    passwordInput.addEventListener("keypress", function(event) {
+        if (event.key === "Enter") {
+            confirmButton();
+        }
+    });
+
 };
 
 
@@ -81,17 +110,48 @@ function confirmButton() {
     const emailValue = document.getElementById("email").value;
     const userValue = document.getElementById("User").value;
     const passwordValue = document.getElementById("psw").value;
+    const confirmvalue = document.getElementById("bot");
 
-    if (emailValue !== '' || userValue !== '' || passwordValue !== '') {
-        document.getElementById("bot").disabled = true;
-    } else {
-        document.getElementById("bot").disabled = false;
-    }
+    const isFormComplete = emailValue.trim() !== '' && userValue.trim() !== '' && passwordValue.trim() !== '';
+// Habilitar/deshabilitar el botón "CONFIRM" según si el formulario está completo o no
+    document.getElementById("bot").disabled = !isFormComplete;
+
+
+    confirmvalue.addEventListener("click", async () => {
     // Mostrar la frase y los botones cuando se confirma el formulario
-    document.getElementById("startMessage").style.display = "block";
-    document.getElementById("container").style.display = "block";
-    document.getElementById("container0").style.display = "block";
+        document.getElementById("startMessage").style.display = "block";
+        document.getElementById("container").style.display = "block";
+        document.getElementById("container0").style.display = "block";
+        document.getElementById("email").disabled = true;
+        document.getElementById("User").disabled = true;
+        document.getElementById("psw").disabled = true;
+        document.getElementById("bot").disabled = true;
+    });
 }
 
+function dibujar(event) {
+    const canvas = document.getElementById("canvas");
+    const ctx = canvas.getContext("2d");
 
+    let posX = event.clientX - canvas.offsetLeft; // Corregir posición relativa al canvas
+    let posY = event.clientY - canvas.offsetTop; // Corregir posición relativa al canvas
 
+    let bandera;
+    canvas.onmousedown = function () {
+        bandera = true;
+    };
+    canvas.onmouseup = function () {
+        bandera = false;
+    };
+
+    if (bandera) {
+        ctx.fillRect(posX, posY, 5, 5);
+    }
+}
+
+function limpiarcanvas() {
+    let canvas = document.getElementById("canvas");
+    let ctx = canvas.getContext("2d");
+    ctx.clearRect(0, 0, canvas.width, canvas.height); // Limpiar todo el canvas
+
+}

@@ -206,3 +206,15 @@ a:link {
 a:hover {
     font-weight: bold;
 }
+.dib {
+    margin-top: 220px;
+    align-items: center;
+
+}
+
+canvas {
+    border: 3px solid antiquewhite;
+    width: 800px;
+    height: 400px;
+
+}
