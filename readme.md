@@ -2,15 +2,15 @@
 
 Proyecto para laboratorio de computación 2.
 
-- [Autor:](## Autor)
-- [Descripción:](## Contenido/Descripción)
-- [Tecnologías Usadas:](### Tecnologías Usadas)
+- [Autor:](#autor)
+- [Descripción](#descripción)
+- [Tecnologías Usadas](#tecnologías-usadas)
 
 ## Autor:
 
 * **Brianna Bistolfi Pan**
 
-## Contenido/Descripción:
+## Descripción:
 
 ***Proyecto 2024***: *Aplicación Quiz. Preguntas multiple choice sobre deportes.*
 

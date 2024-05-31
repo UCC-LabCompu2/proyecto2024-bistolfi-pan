@@ -37,44 +37,43 @@ function calculatePoints(pageName, questions) {
 // Llamadas a la función para cada página con sus respectivas preguntas y respuestas
 function readyaleatory() {
     calculatePoints("Aleatory", [
-        { name: "snowboarding", correctAnswer: "Snurfing" },
-        { name: "running", correctAnswer: "True" },
-        { name: "soccer", correctAnswer: "River Plate" }
+        {name: "snowboarding", correctAnswer: "Snurfing"},
+        {name: "running", correctAnswer: "True"},
+        {name: "soccer", correctAnswer: "River Plate"}
     ]);
 }
 
 function readysnow() {
     calculatePoints("Snowboard", [
-        { name: "year", correctAnswer: "1998" },
-        { name: "city", correctAnswer: "United States" },
-        { name: "name", correctAnswer: "Sherman Poppen" }
+        {name: "year", correctAnswer: "1998"},
+        {name: "city", correctAnswer: "United States"},
+        {name: "name", correctAnswer: "Sherman Poppen"}
     ]);
 }
 
 function readysoc() {
     calculatePoints("Soccer", [
-        { name: "many", correctAnswer: "3" },
-        { name: "name", correctAnswer: "César Menotti" },
-        { name: "team", correctAnswer: "Racing Club" }
+        {name: "many", correctAnswer: "3"},
+        {name: "name", correctAnswer: "César Menotti"},
+        {name: "team", correctAnswer: "Racing Club"}
     ]);
 }
 
 function readyrun() {
     calculatePoints("Run", [
-        { name: "pace", correctAnswer: "7:30 min per mile" },
-        { name: "city", correctAnswer: "NYC" },
-        { name: "potassium", correctAnswer: "Coconut Water" }
+        {name: "pace", correctAnswer: "7:30 min per mile"},
+        {name: "city", correctAnswer: "NYC"},
+        {name: "potassium", correctAnswer: "Coconut Water"}
     ]);
 }
 
 
-window.onload = function() {
+window.onload = function () {
     // Ocultar la frase y los botones al cargar la página
     document.getElementById("container").style.display = "none";
     document.getElementById("container0").style.display = "none";
     document.getElementById("startMessage").style.display = "none";
 };
-
 
 
 // Esta función se ejecutará cuando se presione el botón "CONFIRM"
