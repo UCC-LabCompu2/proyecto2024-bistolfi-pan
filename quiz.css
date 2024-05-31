@@ -64,13 +64,23 @@ h3 {
 
 #container, #container0 {
     display: inline-block;
+    margin-inside: -100px;
+}
+#buttonContainer {
+    display: flex;
     justify-content: space-between;
-    align-items: center;
+    gap: 10px;
+    margin-bottom: 40px;
 }
 
 .info {
-    justify-content: space-between;
-    padding-inline: 30px;
+    text-align: center;
+    margin: 0 auto;
+
+}
+#deco {
+    width: 400px;
+    height: 120px;
 }
 
 #bottom, #bottom2, #bottom3, #ready {

@@ -39,49 +39,54 @@
         <div id="data">
             <p>
                 <label for="email">Email: </label>
-                <input type="email" name="emal" id="email" size="40" placeholder="insert your email" maxlength="40">
+                <input type="email" name="email" id="email" size="20" placeholder="insert your email" maxlength="20" autocomplete="email">
             </p>
             <p>
                 <label for="User">User:</label>
-                <input type="text" name="User" id="User" size="40" placeholder="insert your name" maxlength="40">
+                <input type="text" name="User" id="User" size="20" placeholder="insert your name" maxlength="10" autocomplete="username">
             </p>
             <p>
                 <label for="psw"> Password:</label>
-                <input type="password" name="psw" id="psw" size="40" placeholder="insert your password" maxlength="40">
+                <input type="password" name="psw" id="psw" size="20" placeholder="insert your password" maxlength="10" autocomplete="current-password">
             </p>
             <p>
-                <button id="bot" type="button" onclick="" ><a href="" target="_self"> CONFIRM </a> </button>
+                <button id="bot" type="button" disabled onclick="confirmButton()">
+                    CONFIRM
+                </button>
             </p>
         </div>
+
     </aside>
 
-    <h4> SELECT AN OPTION TO START!</h4>
+    <h4 id="startMessage"> SELECT AN OPTION TO START!</h4>
 
-    <div id="container" class="info">
-        <p>
-            <button id="bottom" type="button">
-                <a href="exclusive.html" target="_self">EXCLUSIVE </a>
-            </button>
-        </p>
-        <h4>
-            <em> three multiple choice questions about a sport of your choice </em>
-        </h4>
-    </div>
-  <div id="container0" class="info" >
-        <p>
-            <button id="bottom2" type="button">
-                <a href="aleatory.html" target="_self">ALEATORY</a>
-            </button>
-        </p>
-        <h4>
-            <em> three multiple choice questions about different sports </em>
-        </h4>
+    <div id="buttonContainer">
+        <div id="container" class="info">
+            <p>
+                <button id="bottom" type="button">
+                    <a href="exclusive.html" target="_self">EXCLUSIVE</a>
+                </button>
+            </p>
+            <h4>
+                <em> three multiple choice questions about a sport of your choice </em>
+            </h4>
+        </div>
+        <div id="container0" class="info">
+            <p>
+                <button id="bottom2" type="button">
+                    <a href="aleatory.html" target="_self">ALEATORY</a>
+                </button>
+            </p>
+            <h4>
+                <em> three multiple choice questions about different sports </em>
+            </h4>
+        </div>
     </div>
 </main>
 
 <!-- pie de página -->
 <footer>
-    <p><img src="imagenes/decoracion.png" alt="deco"></p>
+    <p><img src="imagenes/decoracion.png" id="deco" alt="deco"></p>
     <h6>Get a mental workout with these sports quizzes. Join the fun! © 2024 All rights reserved.</h6>
 </footer>
 

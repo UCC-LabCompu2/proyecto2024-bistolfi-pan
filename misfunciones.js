@@ -67,3 +67,32 @@ function readyrun() {
     ]);
 }
 
+
+window.onload = function() {
+    // Ocultar la frase y los botones al cargar la página
+    document.getElementById("container").style.display = "none";
+    document.getElementById("container0").style.display = "none";
+    document.getElementById("startMessage").style.display = "none";
+};
+
+
+
+// Esta función se ejecutará cuando se presione el botón "CONFIRM"
+function confirmButton() {
+    const emailValue = document.getElementById("email").value;
+    const userValue = document.getElementById("User").value;
+    const passwordValue = document.getElementById("psw").value;
+
+    if (emailValue !== '' || userValue !== '' || passwordValue !== '') {
+        document.getElementById("bot").disabled = true;
+    } else {
+        document.getElementById("bot").disabled = false;
+    }
+    // Mostrar la frase y los botones cuando se confirma el formulario
+    document.getElementById("startMessage").style.display = "block";
+    document.getElementById("container").style.display = "block";
+    document.getElementById("container0").style.display = "block";
+}
+
+
+
