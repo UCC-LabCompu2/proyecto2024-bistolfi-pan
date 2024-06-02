@@ -1,7 +1,5 @@
 /**
  * Función para calcular puntos y mostrar resultados
- * @param {string} pageName - El nombre de la página actual
- * @param {Array} questions - Array de objetos que contiene las preguntas y respuestas de la página
  */
 function calculatePoints(pageName, questions) {
     // Obtener las respuestas del usuario
@@ -129,29 +127,50 @@ function confirmButton() {
     });
 }
 
+
+
+
+/**
+ *funcion global true or false
+ */
+let bandera;
+
+/**
+ * permite dibujar lapiz
+ * @method dibujar
+ */
+
 function dibujar(event) {
-    const canvas = document.getElementById("canvas");
-    const ctx = canvas.getContext("2d");
+    let canvas = document.getElementById("dibujar");
+    let ctx = canvas.getContext("2d");
 
-    let posX = event.clientX - canvas.offsetLeft; // Corregir posición relativa al canvas
-    let posY = event.clientY - canvas.offsetTop; // Corregir posición relativa al canvas
+    let rect = canvas.getBoundingClientRect(); // Obtener el rectángulo del canvas
+    let posX = event.clientX - rect.left; // Calcular la posición X relativa al canvas ;
+    let posY = event.clientY - rect.top; // Calcular la posición X relativa al canvas;
 
-    let bandera;
+
     canvas.onmousedown = function () {
-        bandera = true;
+        bandera = true
     };
     canvas.onmouseup = function () {
-        bandera = false;
+        bandera = false
     };
 
     if (bandera) {
-        ctx.fillRect(posX, posY, 5, 5);
+        ctx.fillStyle = 'violet';
+        ctx.fillRect(posX, posY,6, 6);
     }
 }
 
-function limpiarcanvas() {
-    let canvas = document.getElementById("canvas");
-    let ctx = canvas.getContext("2d");
-    ctx.clearRect(0, 0, canvas.width, canvas.height); // Limpiar todo el canvas
+/**
+ * permite limpiar canvas
+ * @method LimpiarCanvas
+ */
 
+function LimpiarCanvas() {
+    let canvas = document.getElementById("dibujar");
+    let ctx = canvas.getContext("2d");
+
+    ctx.clearRect(0, 0, canvas.width, canvas.height); // Limpiar el contenido del canvas
 }
+
