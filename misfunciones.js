@@ -1,7 +1,7 @@
 /**
  * Función para calcular puntos y mostrar resultados
  */
-function calculatePoints(pageName, questions) {
+function calcularpuntos(pageName, questions) {
     // Obtener las respuestas del usuario
     let respuesta1 = document.querySelector('input[name="' + questions[0].name + '"]:checked')?.value;
     let respuesta2 = document.querySelector('input[name="' + questions[1].name + '"]:checked')?.value;
@@ -11,9 +11,9 @@ function calculatePoints(pageName, questions) {
     let puntos = 0;
 
     // Verificar las respuestas y sumar puntos
-    puntos += (respuesta1 === questions[0].correctAnswer) ? 5 : 0;
-    puntos += (respuesta2 === questions[1].correctAnswer) ? 5 : 0;
-    puntos += (respuesta3 === questions[2].correctAnswer) ? 5 : 0;
+    puntos += (respuesta1 === questions[0].respcorrecta) ? 5 : 0;
+    puntos += (respuesta2 === questions[1].respcorrecta) ? 5 : 0;
+    puntos += (respuesta3 === questions[2].respcorrecta) ? 5 : 0;
 
     if (puntos === 15) {
         alert("¡CONGRATULATIONS! You have answered all the questions correctly!");
@@ -23,109 +23,82 @@ function calculatePoints(pageName, questions) {
         alert("You have obtained " + puntos + " points. You have answered " + Correctas + " questions and you were missing " + Restantes + " to reach 15 points");
     }
 
-    // Dar opción para volver a jugar o salir del juego
+
+    //Dar opción para volver a jugar o salir del juego
     let jugarDeNuevo = confirm("¿Would you like to play again?");
-    if (jugarDeNuevo) {
-        location.reload();
+    if (jugarDeNuevo ) {
+        calcularpuntos();
     } else {
-        window.location.href = "index.html";
+       location.replace("index.html")
     }
 }
 
-// Llamadas a la función para cada página con sus respectivas preguntas y respuestas
+/**
+ * Llamadas a la función para cada página con sus respectivas preguntas y respuestas
+ */
+
 function readyaleatory() {
-    calculatePoints("Aleatory", [
-        {name: "snowboarding", correctAnswer: "Snurfing"},
-        {name: "running", correctAnswer: "True"},
-        {name: "soccer", correctAnswer: "River Plate"}
+    calcularpuntos("Aleatory", [
+        {name: "snowboarding", respcorrecta: "Snurfing"},
+        {name: "running", respcorrecta: "True"},
+        {name: "soccer", respcorrecta: "River Plate"}
     ]);
 }
 
 function readysnow() {
-    calculatePoints("Snowboard", [
-        {name: "year", correctAnswer: "1998"},
-        {name: "city", correctAnswer: "United States"},
-        {name: "name", correctAnswer: "Sherman Poppen"}
+    calcularpuntos("Snowboard", [
+        {name: "year", respcorrecta: "1998"},
+        {name: "city", respcorrecta: "United States"},
+        {name: "name", respcorrecta: "Sherman Poppen"}
     ]);
 }
 
 function readysoc() {
-    calculatePoints("Soccer", [
-        {name: "many", correctAnswer: "3"},
-        {name: "name", correctAnswer: "César Menotti"},
-        {name: "team", correctAnswer: "Racing Club"}
+    calcularpuntos("Soccer", [
+        {name: "many",respcorrecta : "3"},
+        {name: "name", respcorrecta: "César Menotti"},
+        {name: "team", respcorrecta: "Racing Club"}
     ]);
 }
 
 function readyrun() {
-    calculatePoints("Run", [
-        {name: "pace", correctAnswer: "7:30 min per mile"},
-        {name: "city", correctAnswer: "NYC"},
-        {name: "potassium", correctAnswer: "Coconut Water"}
+    calcularpuntos("Run", [
+        {name: "pace", respcorrecta: "7:30 min per mile"},
+        {name: "city", respcorrecta: "NYC"},
+        {name: "potassium", respcorrecta: "Coconut Water"}
     ]);
 }
 
 
+
+/**
+ * Función para activar o desactivar el botón "CONFIRM" según la validez de los campos
+ */
+
 window.onload = function () {
-    // Ocultar la frase y los botones al cargar la página
-    document.getElementById("container").style.display = "none";
-    document.getElementById("container0").style.display = "none";
-    document.getElementById("startMessage").style.display = "none";
 
-    // Deshabilitar el botón "CONFIRM" inicialmente
     document.getElementById("bot").disabled = true;
+    document.getElementById("visible").style.display = "none";
 
+}
+function activarBoton() {
 
-    // Obtener referencias a los campos de entrada
-    const emailInput = document.getElementById("email");
-    const userInput = document.getElementById("User");
-    const passwordInput = document.getElementById("psw");
-
-  // Agregar event listener para el evento 'keypress' en los campos de entrada
-    emailInput.addEventListener("keypress", function(event) {
-        if (event.key === "Enter") {
-            confirmButton();
-        }
-    });
-
-    userInput.addEventListener("keypress", function(event) {
-        if (event.key === "Enter") {
-            confirmButton();
-        }
-    });
-
-    passwordInput.addEventListener("keypress", function(event) {
-        if (event.key === "Enter") {
-            confirmButton();
-        }
-    });
-
-};
-
-
-// Esta función se ejecutará cuando se presione el botón "CONFIRM"
-function confirmButton() {
     const emailValue = document.getElementById("email").value;
     const userValue = document.getElementById("User").value;
     const passwordValue = document.getElementById("psw").value;
-    const confirmvalue = document.getElementById("bot");
 
-    const isFormComplete = emailValue.trim() !== '' && userValue.trim() !== '' && passwordValue.trim() !== '';
-// Habilitar/deshabilitar el botón "CONFIRM" según si el formulario está completo o no
-    document.getElementById("bot").disabled = !isFormComplete;
+    const completado = emailValue !== '' && userValue !== '' && passwordValue !== '';
 
+    if (completado) {
+        document.getElementById("bot").disabled = false;
+    }
 
-    confirmvalue.addEventListener("click", async () => {
-    // Mostrar la frase y los botones cuando se confirma el formulario
-        document.getElementById("startMessage").style.display = "block";
-        document.getElementById("container").style.display = "block";
-        document.getElementById("container0").style.display = "block";
-        document.getElementById("email").disabled = true;
-        document.getElementById("User").disabled = true;
-        document.getElementById("psw").disabled = true;
-        document.getElementById("bot").disabled = true;
-    });
 }
+
+    let Aceptar = () => {
+        document.getElementById("visible").style.display = "block";
+
+    }
 
 
 
@@ -145,7 +118,7 @@ function dibujar(event) {
     let ctx = canvas.getContext("2d");
 
     let rect = canvas.getBoundingClientRect(); // Obtener el rectángulo del canvas
-    let posX = event.clientX - rect.left; // Calcular la posición X relativa al canvas ;
+    let posX = event.clientX - rect.left; // Calcular la posición X relativa al canvas;
     let posY = event.clientY - rect.top; // Calcular la posición X relativa al canvas;
 
 

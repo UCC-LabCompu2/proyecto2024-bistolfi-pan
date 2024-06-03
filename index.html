@@ -40,20 +40,20 @@
             <p>
                 <label for="email">Email: </label>
                 <input type="email" name="email" id="email" size="20" placeholder="insert your email" maxlength="20"
-                       autocomplete="email">
+                       autocomplete="email"  onchange="activarBoton()" >
             </p>
             <p>
                 <label for="User">User:</label>
                 <input type="text" name="User" id="User" size="20" placeholder="insert your name" maxlength="10"
-                       autocomplete="username">
+                       autocomplete="username"  onchange="activarBoton()">
             </p>
             <p>
                 <label for="psw"> Password:</label>
                 <input type="password" name="psw" id="psw" size="20" placeholder="insert your password" maxlength="10"
-                       autocomplete="current-password">
+                       autocomplete="current-password" onchange="activarBoton()">
             </p>
             <p>
-                <button id="bot" type="button"  onclick="confirmButton()">
+                <button id="bot" type="button" onclick="Aceptar()">
                     CONFIRM
                 </button>
             </p>
@@ -61,12 +61,14 @@
 
     </aside>
 
+    <div  id = "visible" >
+
     <h4 id="startMessage"> SELECT AN OPTION TO START!</h4>
 
-    <div id="buttonContainer">
+    <div id="buttonContainer" >
         <div id="container" class="info">
             <p>
-                <button id="bottom" type="button">
+                <button id="bottom" type="button" >
                     <a href="exclusive.html" target="_self">EXCLUSIVE</a>
                 </button>
             </p>
@@ -85,6 +87,8 @@
             </h4>
         </div>
     </div>
+    </div>
+
 </main>
 
 <!-- pie de página -->
