@@ -60,6 +60,11 @@ h3 {
     border-radius: 8px;
     width: 110px;
 
+
+}
+
+#visible {
+    display: none;
 }
 
 #container, #container0 {
@@ -99,7 +104,7 @@ h3 {
     margin-top: 50px;
     margin-left: auto;
     margin-right: auto;
-    display: block;
+    display: none;
 
 
 }
