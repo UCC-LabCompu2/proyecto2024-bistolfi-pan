@@ -63,9 +63,9 @@ const PagAleatory = () => redirectToPage("aleatory");
  * Suma puntos basados en las respuestas dadas en una categoría.
  * @method sumarPuntos
  * @param {string} category - La categoría de las respuestas.
- * @param {null} r1 - respuesta dada por el usuario.
- * @param {null} r2 - respuesta dada por el usuario.
- * @param {null} r3 - respuesta dada por el usuario.
+ * @param {string} r1 - respuesta dada por el usuario.
+ * @param {string} r2 - respuesta dada por el usuario.
+ * @param {string} r3 - respuesta dada por el usuario.
  * @returns {number} - Puntos obtenidos.
  */
 
