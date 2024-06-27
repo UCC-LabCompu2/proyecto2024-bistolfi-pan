@@ -16,7 +16,7 @@
 
 </head>
 
-<body class="sq" >
+<body class="sq">
 
 <!--cabecera -->
 <header>
@@ -39,21 +39,21 @@
         <div id="data">
             <p>
                 <label for="email">Email: </label>
-                <input type="email" name="email" id="email" size="20" placeholder="insert your email" maxlength="20"
+                <input type="email" name="email" id="email" size="40" placeholder="insert your email" maxlength="60"
                        autocomplete="email" onchange="activarBoton()">
             </p>
             <p>
                 <label for="User">User:</label>
-                <input type="text" name="User" id="User" size="20" placeholder="insert your name" maxlength="10"
+                <input type="text" name="User" id="User" size="30" placeholder="insert your name" maxlength="10"
                        autocomplete="username" onchange="activarBoton()">
             </p>
             <p>
                 <label for="psw"> Password:</label>
-                <input type="password" name="psw" id="psw" size="20" placeholder="insert your password" maxlength="10"
+                <input type="password" name="psw" id="psw" size="30" placeholder="insert your password" maxlength="10"
                        autocomplete="current-password" onchange="activarBoton()">
             </p>
             <p>
-                <button id="bot" type="button"  value="mostrardiv" disabled onclick="Aceptar(this.value)">
+                <button id="bot" type="button" value="mostrardiv" disabled onclick="Aceptar(this.value)">
                     CONFIRM
                 </button>
             </p>
@@ -68,8 +68,8 @@
         <div id="buttonContainer">
             <div id="container" class="info">
                 <p>
-                    <button id="bottom" type="button">
-                        <a href="exclusive.html" target="_self">EXCLUSIVE</a>
+                    <button id="bottom" type="button" onclick="PagExclusive()">
+                        EXCLUSIVE
                     </button>
                 </p>
                 <h4>
@@ -78,8 +78,8 @@
             </div>
             <div id="container0" class="info">
                 <p>
-                    <button id="bottom2" type="button">
-                        <a href="aleatory.html" target="_self">ALEATORY</a>
+                    <button id="bottom2" type="button" onclick="PagAleatory()">
+                        ALEATORY
                     </button>
                 </p>
                 <h4>

@@ -1,5 +1,6 @@
 /**
  * Verifica si una dirección de correo electrónico es válida.
+ * @method validarEmail
  * @param {string} email -dirección de correo electrónico.
  * @returns {boolean} - Devuelve true si el correo es válido, de lo contrario, muestra un mensaje de error.
  */
@@ -15,6 +16,7 @@ const validarEmail = email => {
 
 /**
  * Activa un botón si se han completado ciertos campos del formulario y el correo es válido.
+ * @method activarBoton
  */
 
 const activarBoton = () => {
@@ -30,218 +32,112 @@ const activarBoton = () => {
     const completado = emailValue !== '' && userValue !== '' && passwordValue !== '';
 
     if (completado && validarEmail(emailValue)) {
-        alert("press enter to continue");
         document.getElementById("bot").disabled = false;
+
+        const boton = document.getElementById("bot");
+        boton.addEventListener("click", function () {
+            document.getElementById("visible").style.display = 'block';
+        });
     }
 
-}
-
-/**
- * Muestra un elemento HTML si se cumple cierta condición.
- * @param {string} valor - El valor que activa la visualización del elemento.
- */
-
-const Aceptar = (valor) => {
-    if (valor === "mostrardiv") {
-        document.getElementById("visible").style.display = 'block';
-    }
 }
 
 
 /**
- * Asigna puntos basados en las respuestas dadas en la categoría "Aleatorio".
- * @param {string} valor - La respuesta dada por el usuario.
+ * te direcciona a la página seleccionada
+ * @method redirectToPage
+ * @param {string} page -dirección de página.
  */
+const redirectToPage = (page) => {
+    window.location.href = `${page}.html`;
+};
 
-
-let puntosAL = 0;
-let contador = 0;
-
-
-const puntosA = (valor) => {
-    if (valor === "Snurfing" || valor === "True" || valor === "River Plate") {
-        puntosAL += 5;
-    } else {
-        puntosAL += 0;
-    }
-
-    contador++;
-
-    if (contador === 3) {
-        alert("Presiona Enter para continuar");
-        document.getElementById("ready").style.display = "block";
-    }
-}
+const PagRunning = () => redirectToPage("running");
+const PagSoccer = () => redirectToPage("soccer");
+const PagSnow = () => redirectToPage("snowboard");
+const PagExclusive = () => redirectToPage("exclusive");
+const PagAleatory = () => redirectToPage("aleatory");
 
 
 /**
- * Muestra el resultado y opciones de juego nuevamente para la categoría "Aleatorio".
+ * Suma puntos basados en las respuestas dadas en una categoría.
+ * @method sumarPuntos
+ * @param {string} category - La categoría de las respuestas.
+ * @param {null} r1 - respuesta dada por el usuario.
+ * @param {null} r2 - respuesta dada por el usuario.
+ * @param {null} r3 - respuesta dada por el usuario.
+ * @returns {number} - Puntos obtenidos.
  */
 
+const sumarPuntos = (category, r1, r2, r3) => {
+    const aleatory = {
+        "resp1": "Snurfing",
+        "resp2": "True",
+        "resp3": "River Plate"
+    };
+    const running = {
+        "resp1": "7:30",
+        "resp2": "NYC",
+        "resp3": "Coconut Water"
+    };
+    const soccer = {
+        "resp1": "3",
+        "resp2": "César Menotti",
+        "resp3": "Racing Club"
+    };
+    const snowboard = {
+        "resp1": "1998",
+        "resp2": "United States",
+        "resp3": "Sherman Poppen"
+    };
 
-const readyaleatory = () => {
-    if (puntosAL === 15) {
-        alert("¡CONGRATULATIONS! You have answered all the questions correctly!");
-    } else {
-        let Correctas = (puntosAL / 5);
-        let Restantes = 3 - Correctas;
-        alert("You have obtained " + puntosAL + " points. You have answered " + Correctas + " questions and you were missing " + Restantes + " to reach 15 points");
+
+    let puntos = 0;
+
+    if (category === "aleatory") {
+        puntos += aleatory.resp1 === r1 ? 5 : 0;
+        puntos += aleatory.resp2 === r2 ? 5 : 0;
+        puntos += aleatory.resp3 === r3 ? 5 : 0;
+    }
+    if (category === "running") {
+        puntos += running.resp1 === r1 ? 5 : 0;
+        puntos += running.resp2 === r2 ? 5 : 0;
+        puntos += running.resp3 === r3 ? 5 : 0;
+    }
+    if (category === "soccer") {
+        puntos += soccer.resp1 === r1 ? 5 : 0;
+        puntos += soccer.resp2 === r2 ? 5 : 0;
+        puntos += soccer.resp3 === r3 ? 5 : 0;
+    }
+    if (category === "snowboard") {
+        puntos += snowboard.resp1 === r1 ? 5 : 0;
+        puntos += snowboard.resp2 === r2 ? 5 : 0;
+        puntos += snowboard.resp3 === r3 ? 5 : 0;
     }
 
-    let jugarDeNuevo = confirm("¿Would you like to play again?");
+    HabilitarReady(puntos);
+};
 
-    if (jugarDeNuevo) {
-        location.reload();
-    } else {
-        let urlComp = "index.html";
-        window.open(urlComp);
+const HabilitarReady = (puntos) => {
+    const cantClickeados = document.querySelectorAll("input:checked").length;
+
+    if (cantClickeados === 3) {
+        const botonReady = document.getElementById('ready');
+        botonReady.disabled = false;
+
+        botonReady.addEventListener('click', function () {
+            if (puntos === 15) {
+                alert("¡Congratulations! You have won!");
+                let urlComp = "index.html";
+                window.open(urlComp);
+
+            } else {
+                alert("You lost. Try again!");
+                location.reload();
+            }
+        });
     }
-}
-
-
-/**
- * Asigna puntos basados en las respuestas dadas en la categoría "Running".
- * @param {string} valor - La respuesta dada por el usuario.
- */
-
-
-let puntosRun = 0;
-let cont = 0;
-
-const puntosR = (valor) => {
-    if (valor === "7:30 min per mile" || valor === "NYC" || valor === "Coconut Water") {
-        puntosRun += 5;
-    } else {
-        puntosRun += 0;
-    }
-
-    cont++;
-
-    if (cont === 3) {
-        alert("Presiona Enter para continuar");
-        document.getElementById("ready").style.display = "block";
-    }
-}
-
-/**
- * Muestra el resultado y opciones de juego nuevamente para la categoría "Running".
- */
-
-
-const readyrun = () => {
-    if (puntosRun === 15) {
-        alert("¡CONGRATULATIONS! You have answered all the questions correctly!");
-    } else {
-        let Correctas = (puntosRun / 5);
-        let Restantes = 3 - Correctas;
-        alert("You have obtained " + puntosRun + " points. You have answered " + Correctas + " questions and you were missing " + Restantes + " to reach 15 points");
-    }
-
-    let jugarDeNuevo = confirm("¿Would you like to play again?");
-
-    if (jugarDeNuevo) {
-        location.reload();
-    } else {
-        let urlComp = "index.html";
-        window.open(urlComp);
-    }
-}
-
-
-/**
- * Asigna puntos basados en las respuestas dadas en la categoría "Snowboard".
- * @param {string} valor - La respuesta dada por el usuario.
- */
-
-let puntosSnow = 0;
-let contad = 0;
-
-
-const puntosS = (valor) => {
-    if (valor === "1998" || valor === "United States" || valor === "Sherman Poppen") {
-        puntosSnow += 5;
-    } else {
-        puntosSnow += 0;
-    }
-
-    contad++;
-
-    if (contad === 3) {
-        alert("Presiona Enter para continuar");
-        document.getElementById("ready").style.display = "block";
-    }
-}
-
-/**
- * Muestra el resultado y opciones de juego nuevamente para la categoría "Snowboard".
- */
-
-const readysnow = () => {
-    if (puntosSnow === 15) {
-        alert("¡CONGRATULATIONS! You have answered all the questions correctly!");
-    } else {
-        let Correctas = (puntosSnow / 5);
-        let Restantes = 3 - Correctas;
-        alert("You have obtained " + puntosSnow + " points. You have answered " + Correctas + " questions and you were missing " + Restantes + " to reach 15 points");
-    }
-
-    let jugarDeNuevo = confirm("¿Would you like to play again?");
-
-    if (jugarDeNuevo) {
-        location.reload();
-    } else {
-        let urlComp = "index.html";
-        window.open(urlComp);
-    }
-}
-
-
-/**
- * Asigna puntos basados en las respuestas dadas en la categoría "Soccer".
- * @param {string} valor - La respuesta dada por el usuario.
- */
-
-
-let puntosSoccer = 0;
-let co = 0;
-
-const puntosF = (valor) => {
-    if (valor === "3" || valor === "César Menotti" || valor === "Racing Club") {
-        puntosSoccer += 5;
-    } else {
-        puntosSoccer += 0;
-    }
-
-    co++;
-
-    if (co === 3) {
-        alert("Presiona Enter para continuar");
-        document.getElementById("ready").style.display = "block";
-    }
-}
-
-/**
- * Muestra el resultado y opciones de juego nuevamente para la categoría "Soccer".
- */
-
-const readysoc = () => {
-    if (puntosSoccer === 15) {
-        alert("¡CONGRATULATIONS! You have answered all the questions correctly!");
-    } else {
-        let Correctas = (puntosSoccer / 5);
-        let Restantes = 3 - Correctas;
-        alert("You have obtained " + puntosSoccer + " points. You have answered " + Correctas + " questions and you were missing " + Restantes + " to reach 15 points");
-    }
-
-    let jugarDeNuevo = confirm("¿Would you like to play again?");
-
-    if (jugarDeNuevo) {
-        location.reload();
-    } else {
-        let urlComp = "index.html";
-        window.open(urlComp);
-    }
-}
+};
 
 
 //variable global
@@ -249,6 +145,7 @@ let bandera;
 
 /**
  * Dibuja en un lienzo y guarda el correo y el usuario previamente ingresados.
+ * @method dibujar
  * @param {object} event - El evento de dibujo.
  */
 
@@ -284,6 +181,7 @@ const dibujar = event => {
 
 /**
  * Limpia el contenido dibujado en el lienzo HTML.
+ * @method LimpiarCanvas
  */
 
 
