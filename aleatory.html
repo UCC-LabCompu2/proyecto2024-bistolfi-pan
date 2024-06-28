@@ -10,7 +10,7 @@
     <link rel="shortcut icon" href="imagenes/sportcolor.png">
     <script type="text/javascript" src="misfunciones.js"></script>
 </head>
-<body class="sq">
+<body class="sq" onload="setInterval(startAnimation, 500)" >
 
 <!-- cabecera -->
 <header>
@@ -25,7 +25,9 @@
 
 <!-- contenido principal-->
 <main>
-    <aside><img src="imagenes/runaleatory.png" id="run" alt="run"></aside>
+
+        <canvas id="canvasAnimation" class="sq" width="250" height="160"></canvas>
+
     <article>
         <section>
             <ul>

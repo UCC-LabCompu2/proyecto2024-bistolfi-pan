@@ -207,9 +207,8 @@ ul {
 .dib {
     margin-top: 220px;
     align-items: center;
-
+    canvas {
+        border: 3px solid antiquewhite;
+    }
 }
 
-canvas {
-    border: 3px solid antiquewhite;
-}

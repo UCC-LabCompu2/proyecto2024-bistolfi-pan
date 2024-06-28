@@ -191,3 +191,26 @@ const LimpiarCanvas = () => {
 
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 }
+
+
+let x = 0;
+const dx = 2;
+
+function startAnimation() {
+    const canvas = document.getElementById('canvasAnimation');
+    const ctx = canvas.getContext('2d');
+    const img = new Image();
+
+    img.onload = function () {
+        // Clear the canvas before drawing the image
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        ctx.drawImage(img, x, 100);
+    };
+
+    img.src = "imagenes/runaleatory.png";
+
+    x += dx;
+    if (x > canvas.width) {
+        x = 0;
+    }
+}
