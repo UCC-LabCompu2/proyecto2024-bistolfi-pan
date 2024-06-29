@@ -115,27 +115,27 @@ const sumarPuntos = (category, r1, r2, r3) => {
         puntos += snowboard.resp3 === r3 ? 5 : 0;
     }
 
-    HabilitarReady(puntos);
+    alert(`In ${category} category, Your Score is ${puntos}. Thanks for playing!`);
+
+    startAnimation(category);
+
+    setTimeout(function ()
+    {
+        window.location.href = "index.html";
+    },3000);
 };
 
-const HabilitarReady = (puntos) => {
+
+/**
+ * Habilita el botón ready una vez seleccionado las respuestas.
+ * @method HabilitarReady
+ */
+const HabilitarReady = () => {
     const cantClickeados = document.querySelectorAll("input:checked").length;
 
     if (cantClickeados === 3) {
         const botonReady = document.getElementById('ready');
         botonReady.disabled = false;
-
-        botonReady.addEventListener('click', function () {
-            if (puntos === 15) {
-                alert("¡Congratulations! You have won!");
-                let urlComp = "index.html";
-                window.open(urlComp);
-
-            } else {
-                alert("You lost. Try again!");
-                location.reload();
-            }
-        });
     }
 };
 
@@ -143,13 +143,12 @@ const HabilitarReady = (puntos) => {
 //variable global
 let bandera;
 
+
 /**
  * Dibuja en un lienzo y guarda el correo y el usuario previamente ingresados.
  * @method dibujar
  * @param {object} event - El evento de dibujo.
  */
-
-
 const dibujar = event => {
 
     const email = localStorage.getItem('email');
@@ -193,24 +192,32 @@ const LimpiarCanvas = () => {
 }
 
 
-let x = 0;
-const dx = 2;
+const img = new Image();
+img.src = "imagenes/runaleatory.png";
 
-function startAnimation() {
+img.onload = function () {
+   startAnimation();
+};
+
+
+/**
+ * Mueve La imagen en la pagina de aleatory.
+ * @method startAnimation
+ */
+
+ let x = 0;
+ const  dx = 2;
+
+let startAnimation = () => {
     const canvas = document.getElementById('canvasAnimation');
     const ctx = canvas.getContext('2d');
-    const img = new Image();
 
-    img.onload = function () {
-        // Clear the canvas before drawing the image
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        ctx.drawImage(img, x, 100);
-    };
-
-    img.src = "imagenes/runaleatory.png";
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.drawImage(img, x, 10);
 
     x += dx;
     if (x > canvas.width) {
-        x = 0;
+        x = -img.width;
     }
+    requestAnimationFrame(startAnimation);
 }

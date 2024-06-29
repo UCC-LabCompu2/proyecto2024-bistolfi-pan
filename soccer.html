@@ -28,6 +28,7 @@
     <aside><img src="imagenes/soccer.png" id="soccer" alt="soccer"></aside>
 
     <article>
+        <form>
         <section>
             <ul>
                 <li>
@@ -36,15 +37,15 @@
                     </h4>
                 </li>
                 <li>
-                    <input type="radio" name="many" value="1" id="1">
+                    <input type="radio" name="many" value="1" id="1" onclick="HabilitarReady()">
                     <label for="1">1</label>
                 </li>
                 <li>
-                    <input type="radio" name="many" value="2" id="2">
+                    <input type="radio" name="many" value="2" id="2" onclick="HabilitarReady()">
                     <label for="2">2</label>
                 </li>
                 <li>
-                    <input type="radio" name="many" value="3" id="3">
+                    <input type="radio" name="many" value="3" id="3" onclick="HabilitarReady()">
                     <label for="3">3</label>
                 </li>
             </ul>
@@ -57,15 +58,15 @@
                     </h4>
                 </li>
                 <li>
-                    <input type="radio" name="name" value="Enzo Francescoli" id="Enzo Francescoli">
+                    <input type="radio" name="name" value="Enzo Francescoli" id="Enzo Francescoli" onclick="HabilitarReady()">
                     <label for="Enzo Francescoli">Enzo Francescoli</label>
                 </li>
                 <li>
-                    <input type="radio" name="name" value="Carlos Bilardo" id="Carlos Bilardo">
+                    <input type="radio" name="name" value="Carlos Bilardo" id="Carlos Bilardo" onclick="HabilitarReady()">
                     <label for="Carlos Bilardo">Carlos Bilardo</label>
                 </li>
                 <li>
-                    <input type="radio" name="name" value="César Menotti" id="César Menotti">
+                    <input type="radio" name="name" value="César Menotti" id="César Menotti" onclick="HabilitarReady()">
                     <label for="César Menotti">César Menotti</label>
                 </li>
             </ul>
@@ -78,22 +79,22 @@
                     </h4>
                 </li>
                 <li>
-                    <input type="radio" name="team" value="Racing Club" id="Racing Club">
+                    <input type="radio" name="team" value="Racing Club" id="Racing Club" onclick="HabilitarReady()">
                     <label for="Racing Club">Racing Club</label>
                 </li>
                 <li>
-                    <input type="radio" name="team" value="River Plate" id="River Plate">
+                    <input type="radio" name="team" value="River Plate" id="River Plate" onclick="HabilitarReady()">
                     <label for="River Plate">River Plate</label>
                 </li>
                 <li>
-                    <input type="radio" name="team" value="Rosario Central" id="Rosario Central">
+                    <input type="radio" name="team" value="Rosario Central" id="Rosario Central" onclick="HabilitarReady()">
                     <label for="Rosario Central">Rosario Central</label>
                 </li>
             </ul>
         </section>
 
-        <button id="ready" type="button" disabled>READY</button>
-
+        <button id="ready" type="button" onclick="sumarPuntos('soccer',many.value,name.value,team.value)" disabled>READY</button>
+        </form>
     </article>
 
     <aside><img src="imagenes/soc1.png" id="soc1" alt="so1"></aside>

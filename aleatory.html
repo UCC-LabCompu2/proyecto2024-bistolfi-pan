@@ -10,7 +10,7 @@
     <link rel="shortcut icon" href="imagenes/sportcolor.png">
     <script type="text/javascript" src="misfunciones.js"></script>
 </head>
-<body class="sq" onload="setInterval(startAnimation, 50)" >
+<body class="sq" onload="setInterval(startAnimation, 5000)" >
 
 <!-- cabecera -->
 <header>
@@ -25,10 +25,9 @@
 
 <!-- contenido principal-->
 <main>
-
-        <canvas id="canvasAnimation" class="sq" width="250" height="160"></canvas>
-
+    <aside><img src="imagenes/fotbal.png" id="football" alt="football"></aside>
     <article>
+        <form>
         <section>
             <ul>
                 <li>
@@ -37,18 +36,15 @@
                     </h4>
                 </li>
                 <li>
-                    <input type="radio" name="snowboarding" value="snow-sliding" id="Snow-sliding"
-                           onchange="sumarPuntos('aleatory','snow-sliding','', '')">
+                    <input type="radio" name="snowboarding" value="snow-sliding" id="Snow-sliding" onclick="HabilitarReady()">
                     <label for="Snow-sliding">Snow-sliding</label>
                 </li>
                 <li>
-                    <input type="radio" name="snowboarding" value="Snurfing" id="Snurfing"
-                           onchange="sumarPuntos('aleatory','Snurfing','', '')">
+                    <input type="radio" name="snowboarding" value="Snurfing" id="Snurfing" onclick="HabilitarReady()">
                     <label for="Snurfing">Snurfing</label>
                 </li>
                 <li>
-                    <input type="radio" name="snowboarding" value="Snurfall" id="Snurfall"
-                           onchange="sumarPuntos('aleatory','Snurfall','', '')">
+                    <input type="radio" name="snowboarding" value="Snurfall" id="Snurfall" onclick="HabilitarReady()">
                     <label for="Snurfall">Snurfall</label>
                 </li>
             </ul>
@@ -62,13 +58,11 @@
                     </h4>
                 </li>
                 <li>
-                    <input type="radio" name="running" value="True" id="True"
-                           onchange="sumarPuntos('aleatory','','True', '')">
+                    <input type="radio" name="running" value="True" id="True" onclick="HabilitarReady()">
                     <label for="True">True</label>
                 </li>
                 <li>
-                    <input type="radio" name="running" value="False" id="False"
-                           onchange="sumarPuntos('aleatory','','False', '')">
+                    <input type="radio" name="running" value="False" id="False" onclick="HabilitarReady()">
                     <label for="False">False</label>
                 </li>
             </ul>
@@ -83,27 +77,29 @@
                     </h4>
                 </li>
                 <li>
-                    <input type="radio" name="soccer" value="River Plate" id="River Plate"
-                           onchange="sumarPuntos('aleatory','','', 'River Plate')">
+                    <input type="radio" name="soccer" value="River Plate" id="River Plate" onclick="HabilitarReady()">
                     <label for="River Plate">River Plate</label>
                 </li>
                 <li>
-                    <input type="radio" name="soccer" value="Boca Juniors" id="Boca Juniors"
-                           onchange="sumarPuntos('aleatory','','', 'Boca Juniors')">
+                    <input type="radio" name="soccer" value="Boca Juniors" id="Boca Juniors" onclick="HabilitarReady()">
                     <label for="Boca Juniors">Boca Juniors</label>
                 </li>
                 <li>
-                    <input type="radio" name="soccer" value="Racing de Avellaneda" id="Racing de Avellaneda"
-                           onchange="sumarPuntos('aleatory','','', 'Racing de Avellaneda')">
+                    <input type="radio" name="soccer" value="Racing de Avellaneda" id="Racing de Avellaneda" onclick="HabilitarReady()">
                     <label for="Racing de Avellaneda">Racing de Avellaneda</label>
                 </li>
             </ul>
         </section>
+
+    <button id="ready" type="button"  onclick="sumarPuntos('aleatory',snowboarding.value,running.value,soccer.value)" disabled>READY</button>
+
+        </form>
     </article>
 
-    <button id="ready" type="button" disabled>READY</button>
 
-    <aside><img src="imagenes/fotbal.png" id="football" alt="football"></aside>
+
+
+    <canvas id="canvasAnimation" class="sq" width="250" height="110"></canvas>
 </main>
 
 
