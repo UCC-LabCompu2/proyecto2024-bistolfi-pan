@@ -29,71 +29,77 @@
 
     <article>
         <form>
-        <section>
-            <ul>
-                <li>
-                    <h4>
-                        <strong>How many World Cups has Argentina won?</strong>
-                    </h4>
-                </li>
-                <li>
-                    <input type="radio" name="many" value="1" id="1" onclick="HabilitarReady()">
-                    <label for="1">1</label>
-                </li>
-                <li>
-                    <input type="radio" name="many" value="2" id="2" onclick="HabilitarReady()">
-                    <label for="2">2</label>
-                </li>
-                <li>
-                    <input type="radio" name="many" value="3" id="3" onclick="HabilitarReady()">
-                    <label for="3">3</label>
-                </li>
-            </ul>
-        </section>
-        <section>
-            <ul>
-                <li>
-                    <h4>
-                        <strong> Who was Argentina's coach during its first World Soccer Championship?</strong>
-                    </h4>
-                </li>
-                <li>
-                    <input type="radio" name="name" value="Enzo Francescoli" id="Enzo Francescoli" onclick="HabilitarReady()">
-                    <label for="Enzo Francescoli">Enzo Francescoli</label>
-                </li>
-                <li>
-                    <input type="radio" name="name" value="Carlos Bilardo" id="Carlos Bilardo" onclick="HabilitarReady()">
-                    <label for="Carlos Bilardo">Carlos Bilardo</label>
-                </li>
-                <li>
-                    <input type="radio" name="name" value="César Menotti" id="César Menotti" onclick="HabilitarReady()">
-                    <label for="César Menotti">César Menotti</label>
-                </li>
-            </ul>
-        </section>
-        <section>
-            <ul>
-                <li>
-                    <h4>
-                        <strong> What was the Argentine team that won the Copa Libertadores in 1967?</strong>
-                    </h4>
-                </li>
-                <li>
-                    <input type="radio" name="team" value="Racing Club" id="Racing Club" onclick="HabilitarReady()">
-                    <label for="Racing Club">Racing Club</label>
-                </li>
-                <li>
-                    <input type="radio" name="team" value="River Plate" id="River Plate" onclick="HabilitarReady()">
-                    <label for="River Plate">River Plate</label>
-                </li>
-                <li>
-                    <input type="radio" name="team" value="Rosario Central" id="Rosario Central" onclick="HabilitarReady()">
-                    <label for="Rosario Central">Rosario Central</label>
-                </li>
-            </ul>
-        </section>
+            <section>
+                <ul>
+                    <li>
+                        <h4>
+                            <strong>How many World Cups has Argentina won?</strong>
+                        </h4>
+                    </li>
+                    <li>
+                        <input type="radio" name="many" value="1" id="1" onclick="HabilitarReady()">
+                        <label for="1">1</label>
+                    </li>
+                    <li>
+                        <input type="radio" name="many" value="2" id="2" onclick="HabilitarReady()">
+                        <label for="2">2</label>
+                    </li>
+                    <li>
+                        <input type="radio" name="many" value="3" id="3" onclick="HabilitarReady()">
+                        <label for="3">3</label>
+                    </li>
+                </ul>
+            </section>
+            <section>
+                <ul>
+                    <li>
+                        <h4>
+                            <strong> Who was Argentina's coach during its first World Soccer Championship?</strong>
+                        </h4>
+                    </li>
+                    <li>
+                        <input type="radio" name="name" value="Enzo Francescoli" id="Enzo Francescoli"
+                               onclick="HabilitarReady()">
+                        <label for="Enzo Francescoli">Enzo Francescoli</label>
+                    </li>
+                    <li>
+                        <input type="radio" name="name" value="Carlos Bilardo" id="Carlos Bilardo"
+                               onclick="HabilitarReady()">
+                        <label for="Carlos Bilardo">Carlos Bilardo</label>
+                    </li>
+                    <li>
+                        <input type="radio" name="name" value="César Menotti" id="César Menotti"
+                               onclick="HabilitarReady()">
+                        <label for="César Menotti">César Menotti</label>
+                    </li>
+                </ul>
+            </section>
+            <section>
+                <ul>
+                    <li>
+                        <h4>
+                            <strong> What was the Argentine team that won the Copa Libertadores in 1967?</strong>
+                        </h4>
+                    </li>
+                    <li>
+                        <input type="radio" name="team" value="Racing Club" id="Racing Club" onclick="HabilitarReady()">
+                        <label for="Racing Club">Racing Club</label>
+                    </li>
+                    <li>
+                        <input type="radio" name="team" value="River Plate" id="River Plate" onclick="HabilitarReady()">
+                        <label for="River Plate">River Plate</label>
+                    </li>
+                    <li>
+                        <input type="radio" name="team" value="Rosario Central" id="Rosario Central"
+                               onclick="HabilitarReady()">
+                        <label for="Rosario Central">Rosario Central</label>
+                    </li>
+                </ul>
+            </section>
 
-        <button id="ready" type="button" onclick="sumarPuntos('soccer',many.value,name.value,team.value)" disabled>READY</button>
+            <button id="ready" type="button" onclick="sumarPuntos('soccer',many.value,name.value,team.value)" disabled>
+                READY
+            </button>
         </form>
     </article>
 

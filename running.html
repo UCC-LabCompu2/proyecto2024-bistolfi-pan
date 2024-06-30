@@ -30,64 +30,70 @@
 
     <article>
         <form>
-        <section>
-            <ul>
-                <li>
-                    <h4>
-                        <strong>If your pace on a treadmill is 8 mph, how fast is that in terms of minutes per mile
-                            pace?</strong>
-                    </h4>
-                </li>
-                <li>
-                    <input type="radio" name="pace" value="7:20 min per mile" id="7:20 min per mile" onclick="HabilitarReady()">
-                    <label for="7:20 min per mile">7:20 min per mile</label>
-                </li>
-                <li>
-                    <input type="radio" name="pace" value="7:30 min per mile" id="7:30 min per mile" onclick="HabilitarReady()">
-                    <label for="7:30 min per mile">7:30 min per mile</label>
-                </li>
-                <li>
-                    <input type="radio" name="pace" value="7:40 min per mile" id="7:40 min per mile" onclick="HabilitarReady()">
-                    <label for="7:40 min per mile">7:40 min per mile</label>
-                </li>
-            </ul>
-        </section>
-        <section>
-            <ul>
-                <li>
-                    <h4>
-                        <strong>Which marathon had the largest number of finishers in 2013?</strong>
-                    </h4>
-                </li>
-                <li>
-                    <input type="radio" name="city" value="Boston" id="Boston" onclick="HabilitarReady()">
-                    <label for="Boston">Boston</label>
-                </li>
-                <li>
-                    <input type="radio" name="city" value="NYC" id="NYC" onclick="HabilitarReady()">
-                    <label for="NYC">NYC</label>
-                </li>
-            </ul>
-        </section>
-        <section>
-            <ul>
-                <li>
-                    <h4>
-                        <strong> What is the best way to replenish potassium when running?</strong>
-                    </h4>
-                </li>
-                <li>
-                    <input type="radio" name="potassium" value="Coconut Water" id="Coconut Water" onclick="HabilitarReady()">
-                    <label for="Coconut Water">Coconut Water</label>
-                </li>
-                <li>
-                    <input type="radio" name="potassium" value="Banana" id="Banana" onclick="HabilitarReady()">
-                    <label for="Banana">Banana</label>
-                </li>
-            </ul>
-        </section>
+            <section>
+                <ul>
+                    <li>
+                        <h4>
+                            <strong>If your pace on a treadmill is 8 mph, how fast is that in terms of minutes per mile
+                                pace?</strong>
+                        </h4>
+                    </li>
+                    <li>
+                        <input type="radio" name="pace" value="7:20 min per mile" id="7:20 min per mile"
+                               onclick="HabilitarReady()">
+                        <label for="7:20 min per mile">7:20 min per mile</label>
+                    </li>
+                    <li>
+                        <input type="radio" name="pace" value="7:30 min per mile" id="7:30 min per mile"
+                               onclick="HabilitarReady()">
+                        <label for="7:30 min per mile">7:30 min per mile</label>
+                    </li>
+                    <li>
+                        <input type="radio" name="pace" value="7:40 min per mile" id="7:40 min per mile"
+                               onclick="HabilitarReady()">
+                        <label for="7:40 min per mile">7:40 min per mile</label>
+                    </li>
+                </ul>
+            </section>
+            <section>
+                <ul>
+                    <li>
+                        <h4>
+                            <strong>Which marathon had the largest number of finishers in 2013?</strong>
+                        </h4>
+                    </li>
+                    <li>
+                        <input type="radio" name="city" value="Boston" id="Boston" onclick="HabilitarReady()">
+                        <label for="Boston">Boston</label>
+                    </li>
+                    <li>
+                        <input type="radio" name="city" value="NYC" id="NYC" onclick="HabilitarReady()">
+                        <label for="NYC">NYC</label>
+                    </li>
+                </ul>
+            </section>
+            <section>
+                <ul>
+                    <li>
+                        <h4>
+                            <strong> What is the best way to replenish potassium when running?</strong>
+                        </h4>
+                    </li>
+                    <li>
+                        <input type="radio" name="potassium" value="Coconut Water" id="Coconut Water"
+                               onclick="HabilitarReady()">
+                        <label for="Coconut Water">Coconut Water</label>
+                    </li>
+                    <li>
+                        <input type="radio" name="potassium" value="Banana" id="Banana" onclick="HabilitarReady()">
+                        <label for="Banana">Banana</label>
+                    </li>
+                </ul>
+            </section>
 
-        <button id="ready" type="button" onclick="sumarPuntos('running',pace.value,city.value,potassium.value)" disabled>READY</button>
+            <button id="ready" type="button" onclick="sumarPuntos('running',pace.value,city.value,potassium.value)"
+                    disabled>READY
+            </button>
         </form>
     </article>
 

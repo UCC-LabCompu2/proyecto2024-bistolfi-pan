@@ -10,7 +10,7 @@
     <link rel="shortcut icon" href="imagenes/sportcolor.png">
     <script type="text/javascript" src="misfunciones.js"></script>
 </head>
-<body class="sq" onload="setInterval(startAnimation, 5000)" >
+<body class="sq">
 
 <!-- cabecera -->
 <header>
@@ -25,81 +25,92 @@
 
 <!-- contenido principal-->
 <main>
-    <aside><img src="imagenes/fotbal.png" id="football" alt="football"></aside>
+    <aside>
+        <img src="imagenes/fotbal.png" id="football" alt="football">
+    </aside>
+
     <article>
         <form>
-        <section>
-            <ul>
-                <li>
-                    <h4>
-                        <strong> What was the first name given to snowboarding?</strong>
-                    </h4>
-                </li>
-                <li>
-                    <input type="radio" name="snowboarding" value="snow-sliding" id="Snow-sliding" onclick="HabilitarReady()">
-                    <label for="Snow-sliding">Snow-sliding</label>
-                </li>
-                <li>
-                    <input type="radio" name="snowboarding" value="Snurfing" id="Snurfing" onclick="HabilitarReady()">
-                    <label for="Snurfing">Snurfing</label>
-                </li>
-                <li>
-                    <input type="radio" name="snowboarding" value="Snurfall" id="Snurfall" onclick="HabilitarReady()">
-                    <label for="Snurfall">Snurfall</label>
-                </li>
-            </ul>
-        </section>
+            <section>
+                <ul>
+                    <li>
+                        <h4>
+                            <strong> What was the first name given to snowboarding?</strong>
+                        </h4>
+                    </li>
+                    <li>
+                        <input type="radio" name="snowboarding" value="snow-sliding" id="Snow-sliding"
+                               onclick="HabilitarReady()">
+                        <label for="Snow-sliding">Snow-sliding</label>
+                    </li>
+                    <li>
+                        <input type="radio" name="snowboarding" value="Snurfing" id="Snurfing"
+                               onclick="HabilitarReady()">
+                        <label for="Snurfing">Snurfing</label>
+                    </li>
+                    <li>
+                        <input type="radio" name="snowboarding" value="Snurfall" id="Snurfall"
+                               onclick="HabilitarReady()">
+                        <label for="Snurfall">Snurfall</label>
+                    </li>
+                </ul>
+            </section>
 
-        <section>
-            <ul>
-                <li>
-                    <h4>
-                        <strong> You should always stretch before a run to prevent injury.</strong>
-                    </h4>
-                </li>
-                <li>
-                    <input type="radio" name="running" value="True" id="True" onclick="HabilitarReady()">
-                    <label for="True">True</label>
-                </li>
-                <li>
-                    <input type="radio" name="running" value="False" id="False" onclick="HabilitarReady()">
-                    <label for="False">False</label>
-                </li>
-            </ul>
-        </section>
 
-        <section>
-            <ul>
-                <li>
-                    <h4>
-                        <strong> With which Buenos Aires team did Lionel Messi try out, even though the signing did not
-                            materialize?</strong>
-                    </h4>
-                </li>
-                <li>
-                    <input type="radio" name="soccer" value="River Plate" id="River Plate" onclick="HabilitarReady()">
-                    <label for="River Plate">River Plate</label>
-                </li>
-                <li>
-                    <input type="radio" name="soccer" value="Boca Juniors" id="Boca Juniors" onclick="HabilitarReady()">
-                    <label for="Boca Juniors">Boca Juniors</label>
-                </li>
-                <li>
-                    <input type="radio" name="soccer" value="Racing de Avellaneda" id="Racing de Avellaneda" onclick="HabilitarReady()">
-                    <label for="Racing de Avellaneda">Racing de Avellaneda</label>
-                </li>
-            </ul>
-        </section>
+            <section>
+                <ul>
+                    <li>
+                        <h4>
+                            <strong> You should always stretch before a run to prevent injury.</strong>
+                        </h4>
+                    </li>
+                    <li>
+                        <input type="radio" name="running" value="True" id="True" onclick="HabilitarReady()">
+                        <label for="True">True</label>
+                    </li>
 
-    <button id="ready" type="button"  onclick="sumarPuntos('aleatory',snowboarding.value,running.value,soccer.value)" disabled>READY</button>
+                    <li>
+                        <input type="radio" name="running" value="False" id="False" onclick="HabilitarReady()">
+                        <label for="False">False</label>
+                    </li>
+                </ul>
+            </section>
+
+            <section>
+                <ul>
+                    <li>
+                        <h4>
+                            <strong> With which Buenos Aires team did Lionel Messi try out, even though the signing did
+                                not
+                                materialize?</strong>
+                        </h4>
+                    </li>
+                    <li>
+                        <input type="radio" name="soccer" value="River Plate" id="River Plate"
+                               onclick="HabilitarReady()">
+                        <label for="River Plate">River Plate</label>
+                    </li>
+                    <li>
+                        <input type="radio" name="soccer" value="Boca Juniors" id="Boca Juniors"
+                               onclick="HabilitarReady()">
+                        <label for="Boca Juniors">Boca Juniors</label>
+                    </li>
+                    <li>
+                        <input type="radio" name="soccer" value="Racing de Avellaneda" id="Racing de Avellaneda"
+                               onclick="HabilitarReady()">
+                        <label for="Racing de Avellaneda">Racing de Avellaneda</label>
+                    </li>
+                </ul>
+            </section>
+
+            <button id="ready" type="button"
+                    onclick="sumarPuntos('aleatory',snowboarding.value,running.value,soccer.value)" disabled>READY
+            </button>
 
         </form>
     </article>
+    <img src="imagenes/runaleatory.png" id="run" alt="run">
 
-
-
-
-    <canvas id="canvasAnimation" class="sq" width="250" height="110"></canvas>
 </main>
 
 

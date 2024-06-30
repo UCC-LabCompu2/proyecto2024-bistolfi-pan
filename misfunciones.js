@@ -1,3 +1,5 @@
+// noinspection SillyAssignmentJS
+
 /**
  * Verifica si una dirección de correo electrónico es válida.
  * @method validarEmail
@@ -37,10 +39,12 @@ const activarBoton = () => {
         const boton = document.getElementById("bot");
         boton.addEventListener("click", function () {
             document.getElementById("visible").style.display = 'block';
+
+            AnimationOn =  false;
         });
     }
 
-}
+};
 
 
 /**
@@ -115,14 +119,16 @@ const sumarPuntos = (category, r1, r2, r3) => {
         puntos += snowboard.resp3 === r3 ? 5 : 0;
     }
 
+
+
     alert(`In ${category} category, Your Score is ${puntos}. Thanks for playing!`);
 
-    startAnimation(category);
+
 
     setTimeout(function ()
     {
         window.location.href = "index.html";
-    },3000);
+    },1000);
 };
 
 
@@ -192,32 +198,44 @@ const LimpiarCanvas = () => {
 }
 
 
-const img = new Image();
-img.src = "imagenes/runaleatory.png";
-
-img.onload = function () {
-   startAnimation();
-};
-
-
 /**
- * Mueve La imagen en la pagina de aleatory.
+ * Mueve La imagen en la pagina principal.
  * @method startAnimation
  */
+let AnimationOn = true;
 
- let x = 0;
- const  dx = 2;
 
-let startAnimation = () => {
-    const canvas = document.getElementById('canvasAnimation');
-    const ctx = canvas.getContext('2d');
+    let x = 0;
+    const dx = 2;
 
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    ctx.drawImage(img, x, 10);
+   const startAnimation = () => {
+       const canvas = document.getElementById('canvasAnimation');
+       const ctx = canvas.getContext('2d');
 
-    x += dx;
-    if (x > canvas.width) {
-        x = -img.width;
-    }
-    requestAnimationFrame(startAnimation);
-}
+
+       const img = new Image();
+       img.src = "imagenes/canvas.png";
+
+       img.onload = function () {
+           animate();
+       };
+       const animate = () => {
+           if (!AnimationOn ) return;
+
+           canvas.width = canvas.width;
+           ctx.drawImage(img, x, 10)
+
+           if (x > canvas.width) {
+               x = 0;
+           }
+
+           x += dx;
+
+
+               requestAnimationFrame(animate);
+
+       };
+
+   };
+
+
